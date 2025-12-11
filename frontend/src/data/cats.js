@@ -1,6 +1,6 @@
 import tigerImg   from '../assets/cats/tiger.png';
 import lionImg    from '../assets/cats/lion.png';
-import jaguarIMG  from '../assets/cats/jaguar.png';
+import jaguarImg  from '../assets/cats/jaguar.png';
 import leopardImg from '../assets/cats/leopard.png';
 
 export const cats = [
@@ -19,6 +19,44 @@ export const cats = [
     funFacts: [
         "Tigers love to swim and play in water.",
         "They are the largest cat species in the world."
+    ],
+
+    /* NEW:
+       Scalable Document Structure
+       Format:
+
+       sections: [
+         {
+         title: "",
+         content: [
+           "",
+           ""
+         ]
+         },
+         {
+         title: "",
+         content: [
+           "",
+           ""
+         ]
+         }
+         etc etc...
+       ]                           */
+    sections: [
+      {
+        title: "Physical Characteristics",
+        content: [
+          "The Bengal tiger's coat is yellow to light orange, with stripes ranging from dark brown to black. The belly and the interior parts of the limbs are white, and the tail is orange with black rings.",
+          "Male Bengal tigers have an average total length of 270 to 310 cm (110 to 120 in) including the tail, while females measure 240 to 265 cm (94 to 104 in). The weight of males ranges from 180 to 258 kg (397 to 569 lb), while that of females ranges from 100 to 160 kg (220 to 350 lb)."
+        ]
+      },
+      {
+        title: "Hunting and Diet",
+        content: [
+          "Tigers are carnivores. They prefer hunting large ungulates such as chital, sambar, gaur, and to a lesser extent also barasingha, water buffalo, nilgai, serow and takin. Among the medium-sized prey species they frequently kill wild boar.",
+          "They hunt primarily by sight and sound rather than smell. They typically hunt alone and ambush their prey as most other cats do, overpowering them from any angle, using their body size and strength to knock the prey off balance."
+        ]
+      }
     ]
   },
   {
@@ -36,6 +74,15 @@ export const cats = [
     funFacts: [
         "A lion's roar can be heard from 5 miles away.",
         "Female lions do 90% of the hunting."
+    ],
+    sections: [
+      {
+        title: "Social Structure",
+        content: [
+          "Lions are the most social of all wild felids, living in related groups with their offspring. Such a group is called a 'pride'. Groups of male lions are called 'coalitions'.",
+          "Females form the stable social unit in a pride and do not tolerate outside females. Membership only changes with the births and deaths of lionesses, although some females do leave and become nomadic."
+        ]
+      }
     ]
   },
   {
@@ -43,7 +90,7 @@ export const cats = [
     name: "Jaguar",
     scientificName: "Panthera onca",
     description: "The jaguar is a large cat species and the only living member of the genus Panthera native to the Americas.",
-    image: jaguarIMG,
+    image: jaguarImg,
     stats: {
       lifespan: "12-15 years",
       speed: "80 km/h",
