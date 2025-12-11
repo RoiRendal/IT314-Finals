@@ -57,6 +57,27 @@ function CatDetail() {
                 </p>
               </div>
 
+              {/* DYNAMIC SECTIONS
+
+                  Checks if sections exist in the JS file
+                  Loops through each of the existing sections
+                  Display the "title" first
+                  Loops through the "content" (paragraph/s) of THAT section */}
+            {cat.sections && cat.sections.map((section, index) => (
+                <div key={index}>
+                    <h3 className="text-xl font-bold text-stone-800 mb-3 pb-2 border-b border-stone-200">
+                        {section.title}
+                    </h3>
+                    <div className="space-y-4">
+                        {section.content.map((paragraph, pIndex) => (
+                            <p key={pIndex} className="text-stone-600 leading-relaxed text-lg">
+                                {paragraph}
+                            </p>
+                        ))}
+                    </div>
+                </div>
+            ))}
+
               {/* For Scalability:
                   CONDITIONAL RENDERING
                   Only render this section if 'funFacts' exists in the data. */}
@@ -74,6 +95,7 @@ function CatDetail() {
 
             {/* Right: Info Box (Takes up 1 column space)
                        Dynamic Stats                      */}
+            <div className="relative">
             <div className="bg-stone-50 p-6 rounded-xl h-fit border border-stone-100">
               <h3 className="font-bold text-stone-400 uppercase tracking-widest text-sm mb-4">
                 Vital Stats
@@ -90,6 +112,7 @@ function CatDetail() {
                     </li>
                   ))}
               </ul>
+            </div>
             </div>
 
           </div>
