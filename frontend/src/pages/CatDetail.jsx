@@ -36,6 +36,7 @@ function CatDetail() {
       </Link>
 
       <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+
         {/* Hero Image */}
         <div className="h-64 md:h-96 w-full relative">
           <img
@@ -53,12 +54,13 @@ function CatDetail() {
           </div>
         </div>
 
-        {/* Content Layout: 2 Columns on Desktop, 1 on Mobile */}
-        <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Left: Main Description (Takes up 2 columns space) */}
-          <div className="md:col-span-2 space-y-4">
+        {/* Content Layout: 3 Columns on Desktop, 1 on Mobile */}
+        <div className="p-8 grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+          {/* Left: Main Content (Takes up 2 columns space) */}
+          <div className="md:col-span-2 space-y-8">
+            {/* Overview */}
             <div>
-              <h3 className="text-2xl font-bold text-stone-800">About</h3>
+              <h3 className="text-2xl font-bold text-stone-800 mb-3">Overview</h3>
               <p className="text-stone-600 leading-relaxed text-lg">
                 {cat.description}
               </p>
@@ -66,10 +68,10 @@ function CatDetail() {
 
             {/* DYNAMIC SECTIONS
 
-                  Checks if sections exist in the JS file
-                  Loops through each of the existing sections
-                  Display the "title" first
-                  Loops through the "content" (paragraph/s) of THAT section */}
+                Checks if sections exist in the JS file
+                Loops through each of the existing sections
+                Display the "title" first
+                Loops through the "content" (paragraph/s) of THAT section */}
             {cat.sections &&
               cat.sections.map((section, index) => (
                 <div key={index}>
@@ -93,11 +95,11 @@ function CatDetail() {
                 CONDITIONAL RENDERING
                 Only render this section if 'funFacts' exists in the data. */}
             {cat.funFacts && (
-              <div className="bg-orange-50 p-4 rounded-xl border-l-4 border-orange-500">
-                <h3 className="font-bold text-orange-800 mb-2">
-                  Did You Know?
+              <div className="bg-orange-50 p-4 rounded-xl border-l-4 border-orange-500 mt-6">
+                <h3 className="font-bold text-orange-800 mb-3 text-lg">
+                  Things You Might Not Know!
                 </h3>
-                <ul className="list-disc list-inside space-y-1 text-stone-700">
+                <ul className="list-disc list-inside space-y-2 text-stone-700">
                   {cat.funFacts.map((fact, index) => (
                     <li key={index}>{fact}</li>
                   ))}
@@ -107,8 +109,8 @@ function CatDetail() {
           </div>
 
           {/* Right: Info Box (Takes up 1 column space)
-                    Dynamic Stats                       */}
-          <div className="relative">
+                     Dynamic Vital Stats                */}
+          <div className="order-first md:order-last sticky top-24">
             <div className="bg-stone-50 p-6 rounded-xl h-fit border border-stone-100">
               <h3 className="font-bold text-stone-400 uppercase tracking-widest text-sm mb-4">
                 Vital Stats
@@ -124,7 +126,7 @@ function CatDetail() {
                     className="flex justify-between border-b border-stone-200 pb-2"
                   >
                     <span className="text-stone-600">{formatLabel(key)}</span>
-                    <span className="font-semibold text-stone-900 text-right">
+                    <span className="font-semibold text-stone-900 text-right text-sm">
                       {value}
                     </span>
                   </li>
@@ -132,7 +134,7 @@ function CatDetail() {
               </ul>
             </div>
           </div>
-          
+
         </div>
       </div>
     </div>
