@@ -7,7 +7,7 @@ export const cats = [
   {
     id: "tiger",
     name: "Bengal Tiger",
-    scientificName: "Panthera tigris tigris",
+    scientificName: "Panthera tigris",
     description: "The Bengal tiger is a population of the Panthera tigris tigris subspecies. It ranks among the biggest wild cats alive today.",
     image: tigerImg,
     stats: {
