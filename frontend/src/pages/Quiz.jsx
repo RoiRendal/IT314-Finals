@@ -4,7 +4,10 @@ import { useState } from 'react';
 
 function Quiz() {
     return (
-        <div></div>
+
+        <div>
+            <Navbar />
+        </div>
     )
 }
 
