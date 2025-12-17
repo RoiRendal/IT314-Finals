@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import CatDetail from './pages/CatDetail';
 import Quiz from './pages/Quiz';
 import AddCat from './pages/AddCat';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/edit/:id" element={<AddCat />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }
