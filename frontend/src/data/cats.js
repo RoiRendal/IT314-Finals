@@ -1,7 +1,7 @@
-import tigerImg   from '../assets/cats/tiger.png';
-import lionImg    from '../assets/cats/lion.png';
-import jaguarImg  from '../assets/cats/jaguar.png';
-import leopardImg from '../assets/cats/leopard.png';
+import tigerImg   from '../assets/cats/tiger.jpg';
+import lionImg    from '../assets/cats/lion.jpg';
+import jaguarImg  from '../assets/cats/jaguar.jpg';
+import leopardImg from '../assets/cats/leopard.jpg';
 
 export const cats = [
   {
