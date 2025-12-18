@@ -44,6 +44,20 @@ export const cats = [
           "Tigers are carnivores. They prefer hunting large ungulates such as chital, sambar, gaur, and to a lesser extent also barasingha, water buffalo, nilgai, serow and takin. Among the medium-sized prey species they frequently kill wild boar.",
           "They hunt primarily by sight and sound rather than smell. They typically hunt alone and ambush their prey as most other cats do, overpowering them from any angle, using their body size and strength to knock the prey off balance."
         ]
+      },
+      {
+        title: "Conservation",
+        content: [
+          "Internationally, the tiger is protected under CITES Appendix I, banning trade of live tigers and their body parts. In Russia, hunting the tiger has been banned since 1952. In Bhutan, it has been protected since 1969 and enlisted as totally protected since 1995. Since 1972, it has been afforded the highest protection level under India's Wild Life (Protection) Act, 1972. In Nepal and Bangladesh, it has been protected since 1973. Since 1976, it has been totally protected under Malaysia's Protection of Wild Life Act, and the country's Wildlife Conservation Act enacted in 2010 increased punishments for wildlife-related crimes. In Indonesia, it has been protected since 1990. In China, the trade in tiger body parts was banned in 1993. The Thai Wildlife Preservation and Protection Act was enacted in 2019 to combat poaching and trading of body parts.",
+          "In 1973, the National Tiger Conservation Authority and Project Tiger were founded in India to gain public support for tiger conservation. Since then, 53 tiger reserves covering an area of 75,796 km2 (29,265 sq mi) have been established in the country up to 2022. These efforts contributed to the recovery of India's tiger population between 2006 and 2018 so that it occurs in an area of about 138,200 km2 (53,400 sq mi).",
+          "Myanmar's national tiger conservation strategy developed in 2003 comprises management tasks such as restoration of degraded habitats, increasing the extent of protected areas and wildlife corridors, protecting tiger prey species, thwarting tiger killing and illegal trade of its body parts and promoting public awareness through wildlife education programmes."
+        ]
+      },
+      {
+        title: "Etymology",
+        content: [
+          "The Old English tigras derives from Old French tigre, from Latin tigris, which was a borrowing from tigris (Ancient Greek: τίγρις). Since ancient times, the word tigris has been suggested to originate from the Armenian or Persian word for 'arrow', which may also be the origin of the name for the river Tigris. However, today, the names are thought to be homonyms, and the connection between the tiger and the river is doubted."
+        ]
       }
     ]
   },
