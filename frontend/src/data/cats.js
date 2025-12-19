@@ -1,7 +1,7 @@
 import tigerImg   from '../assets/cats/tiger.jpg';
 import lionImg    from '../assets/cats/lion.jpg';
 import jaguarImg  from '../assets/cats/jaguar.jpg';
-import leopardImg from '../assets/cats/leopard.jpg';
+import snowLeopardImg from '../assets/cats/snow-leopard.jpg';
 
 export const cats = [
   {
@@ -173,21 +173,21 @@ export const cats = [
     ]
   },
   {
-    id: "leopard",
-    attribution: "By Sumeet Moghe - File:African_leopard_male.jpg, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=107561790",
-    name: "Leopard",
-    scientificName: "Panthera pardus",
-    description: "The leopard is one of the five extant species in the genus Panthera. It is known for its well-camouflaged fur and climbing ability.",
-    image: leopardImg,
+    id: "snowLeopard",
+    attribution: "By Irbis1983 - Own work, Public Domain, https://commons.wikimedia.org/w/index.php?curid=10471303",
+    name: "Snow Leopard",
+    scientificName: "Panthera Uncia",
+    description: "The snow leopard (Panthera uncia) is a species of large cat in the genus Panthera of the family Felidae. The species is native to the mountain ranges of Central and South Asia. It is listed as Vulnerable on the IUCN Red List because the global population is estimated to number fewer than 10,000 mature individuals and is expected to decline about 10% by 2040. It is mainly threatened by poaching and habitat destruction following infrastructural developments. It inhabits alpine and subalpine zones at elevations of 3,000–4,500 m (9,800–14,800 ft), ranging from eastern Afghanistan, the Himalayas, and the Tibetan Plateau to southern Siberia, Mongolia, and western China. In the northern part of its range, it also lives at lower elevations.",
+    image: snowLeopardImg,
     stats: {
-      lifespan: "12-17 years",
+      lifespan: "15-18 years",
       speed: "58 km/h",
-      weight: "51 kg",
-      climbingAbility: "Excellent"
+      weight: "55 kg",
+      paws: "Extra Large"
     },
     funFacts: [
-      "",
-      ""
+      "Snow leopards are incredibly hard to spot in their natural habitat.",
+      "Cubs are born with a woolly coat that thickens rapidly in the first month."
     ],
   }
   /* === Template ===
