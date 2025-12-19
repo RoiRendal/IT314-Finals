@@ -17,8 +17,11 @@ function AddCat() {
     lifespan: '',
     speed: '',
     weight: '',
-    sections: [{ title: '', content: '' }] 
+    sections: [{ title: '', content: '' }] ,
+    funFacts: ['']
   });
+
+  
 
   useEffect(() => {
     if (isEditMode) {
@@ -38,7 +41,8 @@ function AddCat() {
             sections: catToEdit.sections.map(s => ({
                 title: s.title,
                 content: s.content.join('\n\n') 
-            }))
+            })),
+            funFacts: catToEdit.funFacts || ['']
         });
         if (catToEdit.image.startsWith('data:')) {
             setImageMode('upload');
@@ -81,6 +85,22 @@ function AddCat() {
     setFormData({ ...formData, sections: updatedSections });
   };
 
+  // --- TRIVIA HANDLERS ---
+const handleFunFactChange = (index, value) => {
+    const updatedFacts = [...formData.funFacts];
+    updatedFacts[index] = value;
+    setFormData({ ...formData, funFacts: updatedFacts });
+};
+
+const addFunFact = () => {
+    setFormData({ ...formData, funFacts: [...formData.funFacts, ''] });
+};
+
+const removeFunFact = (index) => {
+    const updatedFacts = formData.funFacts.filter((_, i) => i !== index);
+    setFormData({ ...formData, funFacts: updatedFacts });
+};
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.imageUrl) {
@@ -106,6 +126,7 @@ function AddCat() {
         weight: formData.weight
       },
       sections: processedSections,
+      funFacts: formData.funFacts.filter(fact => fact.trim() !== ''),
       isCustom: true
     };
 
@@ -161,11 +182,11 @@ function AddCat() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                 <div>
                     <label className={labelClass}>Subject Name</label>
-                    <input required name="name" value={formData.name} onChange={handleChange} className={inputClass} placeholder="e.g. SNOW LEOPARD" />
+                    <input required name="name" value={formData.name} onChange={handleChange} className={inputClass} placeholder="e.g. COUGAR" />
                 </div>
                 <div>
                     <label className={labelClass}>Scientific Designation</label>
-                    <input required name="scientificName" value={formData.scientificName} onChange={handleChange} className={inputClass} placeholder="e.g. PANTHERA UNCIA" />
+                    <input required name="scientificName" value={formData.scientificName} onChange={handleChange} className={inputClass} placeholder="e.g. PUMA CONCOLOR" />
                 </div>
             </div>
         </div>
@@ -216,7 +237,7 @@ function AddCat() {
                         value={formData.attribution} 
                         onChange={handleChange} 
                         className="w-full p-2 md:p-3 border-2 border-black font-mono text-sm md:text-base focus:bg-yellow-100 focus:outline-none shadow-[4px_4px_0px_0px_rgba(0,0,0,0.2)] focus:shadow-none focus:translate-x-[2px] focus:translate-y-[2px] transition-all rounded-none" 
-                        placeholder="e.g. Photo by Jane Doe on Unsplash" 
+                        placeholder="e.g. Photo by Tillo Jun on Unsplash" 
                     />
                 </div>    
             </div>
@@ -248,7 +269,42 @@ function AddCat() {
             </div>
         </div>
 
-        {/* SECTION 4: EXTENDED DATA */}
+        {/* SECTION 4: TRIVIA / FUN FACTS */}
+        <div className="space-y-6">
+            <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b-4 border-black pb-2 gap-2 sm:gap-0">
+                <h2 className="text-lg md:text-xl font-black uppercase">4.0 Trivia Database</h2>
+                <button type="button" onClick={addFunFact} className="text-xs md:text-sm font-mono font-bold bg-yellow-300 border-2 border-black px-3 py-1 shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all w-full sm:w-auto">
+                    + ADD_FACT
+                </button>
+            </div>
+
+            <div className="space-y-3">
+                {formData.funFacts.map((fact, index) => (
+                    <div key={index} className="flex gap-2">
+                        {/* Fact Input */}
+                        <input
+                            value={fact}
+                            onChange={(e) => handleFunFactChange(index, e.target.value)}
+                            className={inputClass}
+                            placeholder="e.g. Can jump 6 times their body length..."
+                        />
+                        
+                        {/* Delete Button (Only show if more than 1 fact exists) */}
+                        {formData.funFacts.length > 1 && (
+                            <button 
+                                type="button" 
+                                onClick={() => removeFunFact(index)} 
+                                className="bg-red-500 text-white font-mono font-bold px-3 border-2 border-black hover:bg-red-600 shadow-[2px_2px_0px_0px_#000] hover:shadow-none active:translate-y-[1px] transition-all"
+                            >
+                                X
+                            </button>
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+
+        {/* SECTION 5: EXTENDED DATA */}
         <div className="space-y-6">
             <div className="flex flex-col sm:flex-row justify-between sm:items-center border-b-4 border-black pb-2 gap-2 sm:gap-0">
                 <h2 className="text-lg md:text-xl font-black uppercase">4.0 Extended Data</h2>
