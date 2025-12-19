@@ -64,9 +64,9 @@ export const cats = [
   {
     id: "lion",
     attribution: "By © Giles Laurent, gileslaurent.com, License CC BY-SA, CC BY-SA 4.0, https://commons.wikimedia.org/w/index.php?curid=151312926",
-    name: "African Lion",
+    name: "Lion",
     scientificName: "Panthera Leo",
-    description: "The lion is a large cat of the genus Panthera native to Africa and India. It uses a cooperative hunting strategy.",
+    description: "The lion (Panthera leo) is a large cat of the genus Panthera, currently ranging only in Sub-Saharan Africa and India. It has a muscular, broad-chested body; a short, rounded head; round ears; and a dark, hairy tuft at the tip of its tail. It is sexually dimorphic; adult male lions are larger than females and have a more prominent mane that usually obscures the ears and extends to the shoulders.",
     image: lionImg,
     stats: {
       lifespan: "10-14 years",
